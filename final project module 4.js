@@ -1,6 +1,7 @@
 const movieListel = document.querySelector(".movie-list");
 const title = localStorage.getItem("title");
 
+
 async function renderMovies(filter){
     movieListel.classList += ' movies__loading'
 
@@ -40,11 +41,13 @@ function searchMovies(event){
 
     title.classList += ' movies__loading'
     localStorage.setItem("title", title);
-    window.location.href = `${window.location.origin}/final project module 4.html`;
+    window.location.href = `${window.location.origin}/index.html`;
     title.classList.remove('movie__loading')}
 
 function sortMovies(event){
     renderMovies(event.target.value);
 }
+
+
 
 setTimeout(() => {renderMovies()}, 1000);
