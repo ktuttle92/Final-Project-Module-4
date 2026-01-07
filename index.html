@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project Module 4</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://kit.fontawesome.com/e2160994a3.js" crossorigin="anonymous"></script>
+    <script src="/final project module 4.js" defer></script>
+</head>
+<body>
+    <section id="landing">
+            <div class="landing__container">
+                <img src="/movie banner.jpg" alt="Movie Banner" class="landing__img"/>
+                    <div class="input__wrapper">
+                        <h1 class="landing__title">Movies Galore</h1>
+                        <p class="landing__subtitle">Browse and search for your next favorite movie!</p>
+                    <div class="search">
+                        <input id="input" class="truncate" type="search" autocomplete="off" part="searchbox.input" spellcheck="false" onchange="searchMovies(event)" placeholder="Search By Title">
+                        <button type="submit" class="search__button" onclick="searchMovies(event)"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    </div>
+
+            </div>
+    </section>
+    <section id="movies">
+        <div class="section__filter">
+            <h2 class="section__title">Movie Results</h2>
+            <select id="filter" class="filter__label" onchange="sortMovies(event)">
+               <option value="" disabled selected>Sort</option>
+               <option value="A_TO_Z">A to Z</option>
+            <option value="Z_TO_A">Z to A</option>
+            <option value="YEAR">By Year</option>
+          </select>
+        </div>
+    <div class="container">
+        <div class="row">
+            <div class="movie-list">
+                <div class="movies__loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+</body>
+</html>
