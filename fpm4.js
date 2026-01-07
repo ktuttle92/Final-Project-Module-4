@@ -41,7 +41,7 @@ function searchMovies(event){
 
     title.classList += ' movies__loading'
     localStorage.setItem("title", title);
-    window.location.href = "https://ktuttle92.github.io/Final-Project-Module-4/index.html";
+    window.location.href = `${window.location.origin}/Final-Project-Module-4/index.html`;
     title.classList.remove('movie__loading')}
 
 function sortMovies(event){
