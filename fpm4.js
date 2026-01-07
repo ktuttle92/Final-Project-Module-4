@@ -36,13 +36,14 @@ function movieHtml(movie)  {
                 </div>`
 }
 
-function searchMovies(event){
+async function searchMovies(event){
     const title = event.target.value;
 
-    title.classList += ' movies__loading'
-    localStorage.setItem("title", title);
-    window.location.href = `${window.location.origin}/Final-Project-Module-4/index.html`;
-    title.classList.remove('movie__loading')}
+    movieListel.classList += ' movies__loading'
+    movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=15fbf71a&s=${title}`)
+    const moviesData = await movies.json()
+    movieListel.classList.remove('movies__loading')
+     movieListel.innerHTML = moviesData.Search.map((movie) => movieHtml(movie)).join("");}
 
 function sortMovies(event){
     renderMovies(event.target.value);
