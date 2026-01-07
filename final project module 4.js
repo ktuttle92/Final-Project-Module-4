@@ -24,13 +24,14 @@ async function renderMovies(filter){
 
 function movieHtml(movie)  { 
     return `<div class="movie__wrapper">
+                    <a href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank">
                     <img src="${movie.Poster}" alt="Movie Poster" class="movie__img"/>
                     <div class="movie-card">
                         <div class="movie-card__container">
                             <h3>${movie.Title}</h3>
                             <p><b>Year: </b> ${movie.Year}</p>
                         </div>
-                    </div>
+                    </div></a>
                 </div>`
 }
 
@@ -47,47 +48,3 @@ function sortMovies(event){
 }
 
 setTimeout(() => {renderMovies()}, 1000);
-// async function renderBooks(filter){
-//     const booksWrapper = document.querySelector(".books")
-
-//     booksWrapper.classList += ' books__loading'
-// if(!books){
-//     books = await getBooks();}
-
-//     booksWrapper.classList.remove('books__loading')
-    
-//     if(filter === 'LOW_TO_HIGH'){
-//        books.sort((a,b) => (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice))
-//           }
-//     else if(filter === 'HIGH_TO_LOW'){
-//         books.sort((a,b) => (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice))
-//           }
-//           else if(filter === 'RATING'){
-//             books.sort((a,b) => b.rating - a.rating)
-//           }
-    
-// const userListEl = document.querySelector(".user-list");
-
-// async function main(){
-//     const users =  await fetch("https://jsonplaceholder.typicode.com/users")
-//     const usersData = await users.json()
-//     userListEl.innerHTML = usersData.map((user) => userHtml(user)).join("");
-// }
-// main();
-
-// function userHtml(user)  { 
-//     return `<div class="user-card" onclick="showUserPosts(${user.id})">
-//                         <div class="user-card__container">
-//                             <h3>${user.name}</h3>
-//                             <p><b>Email:</b> ${user.email}</p>
-//                             <p><b>Phone:</b> ${user.phone}</p>
-//                             <p><b>Website: </b><a href="https://${user.website}" target="_blank">${user.website}</a>
-//                         </div>
-//                     </div>`
-//  }
-
-// async function showUserPosts(id) {
-//     localStorage.setItem("id", id);
-//     window.location.href = `${window.location.origin}/user.html`;
-//     }
-  
