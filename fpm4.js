@@ -1,7 +1,6 @@
 const movieListel = document.querySelector(".movie-list");
 const title = localStorage.getItem("title");
-
-
+let currentSearchTerm = title;
 async function renderMovies(filter){
     movieListel.classList += ' movies__loading'
 
@@ -39,11 +38,11 @@ function movieHtml(movie)  {
 async function searchMovies(event){
     const title = event.target.value;
 
-    movieListel.classList += ' movies__loading'
-    movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=15fbf71a&s=${title}`)
-    const moviesData = await movies.json()
-    movieListel.classList.remove('movies__loading')
-     movieListel.innerHTML = moviesData.Search.map((movie) => movieHtml(movie)).join("");}
+    title.classList += ' movies__loading'
+    localStorage.setItem("title", title);
+    window.location.reload();
+    title.classList.remove('movies__loading')
+    }
 
 function sortMovies(event){
     renderMovies(event.target.value);

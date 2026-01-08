@@ -264,5 +264,15 @@ align-items: center;
   justify-content: center;
   align-items: center;
   }
+  .movies__loading .fa-spinner{color:#317ba2;
+  font-size:100px;
+  position:absolute;
+  top:50%;
+  left:35%;
+  transform: translate(-40%, -40%);
+  animation: spin 750ms linear infinite; 
+  z-index:10; 
+}
+
 
 }
