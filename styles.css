@@ -216,7 +216,7 @@ align-items: center;
   .movie__wrapper{width:calc(100%/3);}
 }
 
-@media(max-width:768px){
+@media(max-width:930px){
   .landing__img{height:300px;}
   .landing__title{font-size:28px;}
   .landing__subtitle{font-size:18px;}
@@ -224,7 +224,7 @@ align-items: center;
   .filter__label{font-size:16px;}
   .movie__wrapper{width:calc(100%/2);}
 }
-@media(max-width:480px){
+@media(max-width:580px){
   .landing__container{display: flex;
     flex-direction: column;
     justify-content: center;
